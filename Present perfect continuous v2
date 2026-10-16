@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Present Perfect Continuous Test - Version 2</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f6f7fb;--card:#fff;--tx:#1d2433;--mut:#5b6478;--ac:#3b5bdb;--bd:#dde1ea;--ok:#2b8a3e;--no:#c92a2a}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141821;--card:#1d2330;--tx:#e8ebf3;--mut:#a3acc0;--ac:#7c93ff;--bd:#2d3548;--ok:#69db7c;--no:#ff8787}}
+:root[data-theme="dark"]{--bg:#141821;--card:#1d2330;--tx:#e8ebf3;--mut:#a3acc0;--ac:#7c93ff;--bd:#2d3548;--ok:#69db7c;--no:#ff8787}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 60px}
+h1{font-size:1.6rem;margin:.2em 0}h2{font-size:1.1rem;margin:1em 0 .6em;color:var(--ac)}
+p.s{color:var(--mut);margin:0 0 1em}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px 16px;margin:12px 0}
+.q{font-weight:600;margin:0 0 8px;font-size:1.05rem}
+label.o{display:block;padding:10px 12px;border:1px solid var(--bd);border-radius:8px;margin:8px 0;cursor:pointer}
+label.o:hover{border-color:var(--ac)}
+label.o.sel{border-color:var(--ac);background:rgba(59,91,219,.12)}
+label.o input{margin-right:8px}
+.txt{background:var(--card);border-left:4px solid var(--ac);padding:12px 16px;border-radius:8px;margin:8px 0}
+input[type=text]{width:100%;padding:10px;border:1px solid var(--bd);border-radius:8px;background:var(--card);color:var(--tx);font:inherit;box-sizing:border-box}
+button{background:var(--ac);color:#fff;border:0;padding:12px 20px;border-radius:8px;font:inherit;font-weight:600;cursor:pointer;margin:6px 6px 0 0}
+button.g{background:transparent;color:var(--ac);border:1px solid var(--ac)}
+button:disabled{opacity:.4;cursor:default}
+.ok{color:var(--ok);font-weight:600}.no{color:var(--no);font-weight:600}
+#res{display:none}
+#grid{display:grid;grid-template-columns:repeat(10,1fr);gap:6px;margin:10px 0}
+#grid button{margin:0;padding:8px 0;background:var(--card);color:var(--tx);border:1px solid var(--bd);font-size:.85rem}
+#grid button.d{background:rgba(59,91,219,.18);border-color:var(--ac)}
+#grid button.c{background:var(--ac);color:#fff;border-color:var(--ac)}
+.info{display:flex;justify-content:space-between;color:var(--mut);font-size:.9rem}
+.nav{display:flex;justify-content:space-between;margin-top:10px}
+#stat{font-weight:600;margin:6px 0}
+pre{white-space:pre-wrap;background:var(--card);border:1px solid var(--bd);border-radius:8px;padding:10px;overflow-x:auto;font-size:.85rem}
+</style>
+</head>
+<body>
+<main>
+<h1>Present Perfect Continuous Test</h1>
+<p class="s">Version 2 · 30 questions</p>
+<div id="test">
+<div class="card"><label for="nm"><b>Your full name</b></label><br><input type="text" id="nm" placeholder="Write your name here"></div>
+<div class="info"><span id="cnt"></span><span id="ans"></span></div>
+<div id="grid"></div>
+<h2 id="sec"></h2>
+<div id="read" class="txt" style="display:none"></div>
+<div class="card"><p class="q" id="qt"></p><div id="opts"></div></div>
+<div class="nav"><button class="g" id="prev">← Previous</button><button id="next">Next →</button></div>
+</div>
+<section id="res">
+<h2>Your results</h2>
+<div class="card"><p id="score" style="font-size:1.3rem;font-weight:700;margin:0"></p></div>
+<div id="stat"></div>
+<div id="fb" style="display:none">
+<p class="s">If the automatic sending did not work, use one of these options:</p>
+<button id="mail">Send answers by email</button>
+<button class="g" id="cp">Copy answers</button>
+<pre id="out"></pre>
+</div>
+<div id="det"></div>
+</section>
+</main>
+<script>
+/* ===== SETTINGS ===== */
+var TEACHER_EMAIL="Danielenglishclasses23@gmail.com";
+// Tip: after FormSubmit's activation email, you can replace the address below with the random alias they give you.
+var ENDPOINT="https://formsubmit.co/ajax/"+TEACHER_EMAIL;
+var TEST_NAME="Present Perfect Continuous - Version 2 (30 questions)";
+/* ==================== */
+var TEXT="Marco has been working at a small café in the city centre for three months. He started in July, when he finished university and couldn't find a job in his field. At first he only washed cups, but his boss has been teaching him how to make coffee, and now he prepares drinks for the customers. He has been saving money because he wants to travel to Canada next year. He has also been studying English every evening for the last two months, so he can talk to the tourists who visit the café. Marco says the work is tiring, but he has been meeting lots of interesting people, and that makes him happy.";
+var S=[
+{t:"Part 1 · Reading comprehension (B1)",read:TEXT,q:[
+["How long has Marco been working at the café?",["One month","Three months","Six months"],1],
+["Why did Marco start working there?",["He couldn't find a job in his field.","He wanted to learn English.","His boss was his friend."],0],
+["What has his boss been teaching him?",["How to wash cups","How to speak English","How to make coffee"],2],
+["Why has Marco been saving money?",["To buy a car","To open his own café","To travel to Canada"],2],
+["Why has he been studying English every evening?",["To get a promotion","To talk to the tourists at the café","To pass a university exam"],1]]},
+{t:"Part 2 · Choose the correct sentence",q:[
+["Which sentence is correct?",["The children have playing in the garden since lunch.","The children have been playing in the garden since lunch.","The children are been playing in the garden since lunch."],1],
+["Which question is correct?",["How long has he been waiting for the doctor?","How long he has been waiting for the doctor?","How long is he been waiting for the doctor?"],0],
+["Which sentence is correct?",["She have been working late every night this week.","She has working late every night this week.","She has been working late every night this week."],2],
+["Which sentence is correct?",["We haven't use the car since last month.","We don't been using the car since last month.","We haven't been using the car since last month."],2],
+["Which question is correct?",["Are you been exercising lately?","Have you been exercising lately?","Have you exercising lately?"],1],
+["Which sentence is correct?",["The phone has been ringing for five minutes.","The phone has been ring for five minutes.","The phone is been ringing for five minutes."],0],
+["Which sentence is correct?",["He has been learning guitar for he was ten.","He have been learning guitar since he was ten.","He has been learning guitar since he was ten."],2],
+["Which sentence is correct?",["They has been arguing all morning.","They have been arguing all morning.","They have arguing all morning."],1],
+["Which sentence is correct?",["I have been clean the house, so I'm tired.","I am been cleaning the house, so I'm tired.","I have been cleaning the house, so I'm tired."],2],
+["Which question is correct?",["Why she has been crying?","Why has she been crying?","Why has she crying?"],1]]},
+{t:"Part 3 · Complete the sentence",q:[
+["My parents ______ in this house for twenty years.",["are living","have been living","has been living"],1],
+["It ______ since early morning, so we can't go out.",["has been snowing","has snowing","is been snowing"],0],
+["How long ______ you ______ for a new apartment?",["have / been looking","do / look","are / been looking"],0],
+["I ______ a book all afternoon, and I'm almost at the end.",["have read been","have been reading","am been reading"],1],
+["She ______ well recently, so she's going to see a doctor.",["isn't been feeling","hasn't feeling","hasn't been feeling"],2],
+["We ______ for you since six o'clock!",["are waiting","have been waiting","has been waiting"],1],
+["He has been working here ______ 2018.",["for","since","during"],1],
+["They have been travelling ______ three weeks.",["since","from","for"],2],
+["The students ______ hard for the exam this week.",["has been studying","have been studying","have been study"],1],
+["______ it been raining all night?",["Is","Has","Have"],1],
+["I'm sorry I'm late. ______ long?",["Have you been waiting","Are you waiting","Have you waiting"],0],
+["My hands are dirty because I ______ in the garden.",["am been working","have been working","have working"],1],
+["He ______ video games all day, and his mum is angry.",["have been playing","is been playing","has been playing"],2],
+["We ______ English together since January.",["has been practising","have been practising","are practising"],1],
+["Which sentence is NOT correct?",["She has been living here since 2019.","They have been wait for an hour.","I have been working today."],1]]}
+];
+var L="abc",Q=[],ans=[],cur=0,msg="",sent=false,$=function(i){return document.getElementById(i)};
+S.forEach(function(s){s.q.forEach(function(q){Q.push({s:s.t,r:s.read||null,q:q[0],o:q[1],a:q[2]})})});
+function render(){
+var q=Q[cur],g="",d=0;
+Q.forEach(function(_,i){var c=ans[i]!==undefined;if(c)d++;g+='<button data-i="'+i+'" class="'+(i===cur?'c':c?'d':'')+'" aria-label="Question '+(i+1)+'">'+(i+1)+'</button>'});
+$("grid").innerHTML=g;
+$("cnt").textContent="Question "+(cur+1)+" of "+Q.length;
+$("ans").textContent="Answered: "+d+" / "+Q.length;
+$("sec").textContent=q.s;
+$("read").style.display=q.r?"block":"none";$("read").textContent=q.r||"";
+$("qt").textContent=(cur+1)+". "+q.q;
+var h="";q.o.forEach(function(o,k){h+='<label class="o'+(ans[cur]===k?' sel':'')+'"><input type="radio" name="o" data-k="'+k+'"'+(ans[cur]===k?' checked':'')+'> '+L[k]+') '+o+'</label>'});
+$("opts").innerHTML=h;
+$("prev").disabled=cur===0;
+$("next").textContent=cur===Q.length-1?"Submit test ✓":"Next →"}
+$("grid").onclick=function(e){var b=e.target.closest("button");if(b){cur=+b.dataset.i;render()}};
+$("opts").onchange=function(e){var k=e.target.dataset.k;if(k!==undefined){ans[cur]=+k;render()}};
+$("prev").onclick=function(){if(cur>0){cur--;render();window.scrollTo(0,0)}};
+$("next").onclick=function(){if(cur<Q.length-1){cur++;render();window.scrollTo(0,0)}else submit()};
+function showFallback(){$("fb").style.display="block"}
+function autoSend(name,sc,lines){
+if(sent)return;sent=true;
+$("stat").textContent="Sending your answers to your teacher...";
+var payload={_subject:TEST_NAME+" - "+name,_template:"table",_captcha:"false",Student:name,Test:TEST_NAME,Score:sc+"/"+Q.length,Answers:lines.join(" | ")};
+fetch(ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(payload)})
+.then(function(r){return r.json()})
+.then(function(d){
+if(d&&(d.success===true||d.success==="true")){$("stat").innerHTML='<span class="ok">✓ Your answers were sent to your teacher.</span>'}
+else{$("stat").innerHTML='<span class="no">The automatic sending did not work.</span>';showFallback()}})
+.catch(function(){$("stat").innerHTML='<span class="no">The automatic sending did not work.</span>';showFallback()})}
+function submit(){
+var name=$("nm").value.trim();
+if(!name){alert("Please write your name first.");window.scrollTo(0,0);$("nm").focus();return}
+var un=[];Q.forEach(function(_,i){if(ans[i]===undefined)un.push(i+1)});
+if(un.length&&!confirm("You left unanswered: "+un.join(", ")+". Submit anyway?"))return;
+var sc=0,det="",lines=[];
+Q.forEach(function(q,j){
+var v=ans[j]===undefined?-1:ans[j],ok=v===q.a;if(ok)sc++;
+det+='<div class="card"><b>'+(j+1)+'. '+q.q+'</b><br>'+(ok?'<span class="ok">Correct</span>':'<span class="no">Incorrect</span>')+' — Your answer: '+(v<0?'(none)':L[v]+') '+q.o[v])+(ok?'':'<br>Correct answer: '+L[q.a]+') '+q.o[q.a])+'</div>';
+lines.push((j+1)+". "+(v<0?"-":L[v]))});
+$("det").innerHTML=det;
+$("score").textContent="Score: "+sc+" / "+Q.length;
+msg="Student: "+name+"\nTest: "+TEST_NAME+"\nScore: "+sc+"/"+Q.length+"\n\nAnswers:\n"+lines.join("\n");
+$("out").textContent=msg;
+$("test").style.display="none";$("res").style.display="block";window.scrollTo(0,0);
+autoSend(name,sc,lines)}
+$("mail").onclick=function(){
+window.open("mailto:"+TEACHER_EMAIL+"?subject="+encodeURIComponent(TEST_NAME+" - "+$("nm").value)+"&body="+encodeURIComponent(msg),"_top")};
+$("cp").onclick=function(){try{navigator.clipboard.writeText(msg).then(function(){alert("Answers copied!")})}catch(e){alert("Please select and copy the text below.")}};
+render();
+</script>
+</body>
+</html>
